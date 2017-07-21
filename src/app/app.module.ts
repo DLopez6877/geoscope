@@ -10,6 +10,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { routing } from './app.routing';
 import { GeocacheListComponent } from './geocache-list/geocache-list.component';
 import { masterFirebaseConfig } from './api-keys';
+import { NewCacheComponent } from './new-cache/new-cache.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -22,7 +23,8 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     WelcomeComponent,
-    GeocacheListComponent
+    GeocacheListComponent,
+    NewCacheComponent
   ],
   imports: [
     BrowserModule,
