@@ -1,3 +1,25 @@
-<p>
-  edit-cache works!
-</p>
+<h4>Edit</h4>
+
+<label>Edit Creator:</label>
+<input [(ngModel)]="selectedCache.creator">
+<br>
+
+<label>Edit Latitude:</label>
+<input [(ngModel)]="selectedCache.lat">
+<br>
+
+<label>Edit Longitude:</label>
+<input [(ngModel)]="selectedCache.lon">
+
+<label>Edit Longitude:</label>
+<input [(ngModel)]="selectedCache.lon">
+
+<label>Edit Address:</label>
+<input [(ngModel)]="selectedCache.address">
+
+<label>Edit Hint:</label>
+<input [(ngModel)]="selectedCache.hint">
+
+<button (click)="beginUpdatingCache(selectedCache)">Update</button>
+
+<button (click)="beginDeletingCache(selectedCache)">Delete</button>

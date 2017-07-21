@@ -33,4 +33,18 @@ export class GeocacheService {
     this.cacheList.push(newCache);
   }
 
+  updateCache(localUpdatedCache){
+    var cacheEntryInFirebase = this.getCacheById(localUpdatedCache.$key);
+    cacheEntryInFirebase.update({creator: localUpdatedCache.creator,
+                                address: localUpdatedCache.address,
+                                lat: localUpdatedCache.lat,
+                                lon: localUpdatedCache.long,
+                                hint: localUpdatedCache.hint});
+  }
+
+  deleteCache(localCacheToDelete){
+    var cacheEntryInFirebase = this.getCacheById(localCacheToDelete.$key);
+    cacheEntryInFirebase.remove();
+  }
+
 }

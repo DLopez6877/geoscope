@@ -15,4 +15,14 @@ export class EditCacheComponent implements OnInit {
   ngOnInit() {
   }
 
+  beginUpdatingCache(cacheToUpdate){
+    this.geocacheService.updateCache(cacheToUpdate);
+  }
+
+  beginDeletingCache(cacheToDelete){
+    if(confirm("Are you sure you want to delete this item from the inventory?")){
+      this.geocacheService.deleteCache(cacheToDelete);
+    }
+  }
+
 }
