@@ -35,8 +35,13 @@
     <label>Hint:</label>
     <input #newHint class="form-control">
   </div>
-  <button (click)="submitForm(newCreator.value, newAddress.value, newLat.value, newLon.value, newHint.value); newCreator.value=''; newLat.value=''; newLon.value=''; newAddress.value=''; newHint.value=''">ADD</button>
+  <button (click)="submitForm(newCreator.value, newAddress.value, newLat.value, newLon.value, newHint.value); newCreator.value=''; newLat.value=''; newLon.value=''; newAddress.value=''; newHint.value=''; toggleActive()">ADD</button>
 </div>
 
 
-<p *ngFor="let cache of cacheList | async">by {{cache.creator}} lat: {{cache.lat}} lon: {{cache.lon}} {{cache.hint}} {{cache.address}}</p>
+<div *ngFor="let cache of cacheList | async">
+  <p (click)="goToDetailPage(cache)">by {{cache.creator}} lat: {{cache.lat}} lon: {{cache.lon}} {{cache.hint}} {{cache.address}}<p>
+    <div *ngIf="currentRoute === '/admin'">
+      <app-edit-cache [selectedCache]="cache"></app-edit-cache>
+   </div>
+</div>

@@ -18,6 +18,7 @@ export class GeocacheListComponent implements OnInit {
   lon;
   isActive: boolean = false;
   gpsActive: boolean = false;
+  currentRoute: string = this.router.url;
 
   constructor(
     private geocacheService: GeocacheService,
@@ -44,6 +45,10 @@ export class GeocacheListComponent implements OnInit {
       this.gpsActive = true;
     }
   }
+
+  goToDetailPage(clickedCache) {
+      this.router.navigate(['cacheList', clickedCache.$key]);
+  };
 
   getGps(physicalAddress: string) {
     this.geocacheService.getCoordinates(physicalAddress).subscribe(res => {
