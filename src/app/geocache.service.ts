@@ -17,6 +17,10 @@ export class GeocacheService {
     return this.cacheList;
   }
 
+  getCacheById(cacheId: string) {
+     return this.database.object('cacheList/' + cacheId);
+  }
+
   getCoordinates(physicalAddress: string){
     return this.http.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + physicalAddress + "&key=" + geoKey);
   }

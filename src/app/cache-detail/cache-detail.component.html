@@ -1,3 +1,7 @@
-<p>
-  cache-detail works!
-</p>
+<div>
+  <h3>{{(cacheToDisplay | async)?.creator}}</h3>
+  <h4>{{(cacheToDisplay | async)?.address}}</h4>
+  <h4>{{(cacheToDisplay | async)?.lat}}</h4>
+  <h4>{{(cacheToDisplay | async)?.lon}}</h4>
+  <h5>{{(cacheToDisplay | async)?.hint}}</h5>
+</div>
