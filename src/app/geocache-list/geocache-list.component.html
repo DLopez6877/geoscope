@@ -13,15 +13,15 @@
       <label>Enter an address:</label>
       <input #newPhysicalAddress>
     </div>
-    <button (click)="getGps(newPhysicalAddress.value)">Search</button>
+    <button (click)="getGps(newPhysicalAddress.value); toggleGpsActive()">Search</button>
   </div>
 
 
   <div class="form-group">
     <label>Latitude:</label>
-    <input #newLat class="form-control">
+    <input #newLat class="form-control" value="{{this.lat}}">
     <label>Longitude:</label>
-    <input #newLon class="form-control">
+    <input #newLon class="form-control" value="{{this.lon}}">
   </div>
 
   <span (click)="getLocation(newLat.value, newLon.value)">Click here for recommended location</span>

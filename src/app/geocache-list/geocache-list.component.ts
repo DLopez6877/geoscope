@@ -14,6 +14,8 @@ import { Cache } from './../cache.model';
 export class GeocacheListComponent implements OnInit {
   cacheList;
   address;
+  lat;
+  lon;
   isActive: boolean = false;
   gpsActive: boolean = false;
 
@@ -43,15 +45,23 @@ export class GeocacheListComponent implements OnInit {
     }
   }
 
-  submitForm(creator: string, address: string, lat: number, lon: number, hint: string) {
-      var newCache: Cache = new Cache(creator, address, lat, lon, hint);
-      this.geocacheService.addCache(newCache);
-    }
+  getGps(physicalAddress: string) {
+    this.geocacheService.getCoordinates(physicalAddress).subscribe(res => {
+      this.lat = res.json().results[0].geometry.location.lat;
+      this.lon = res.json().results[0].geometry.location.lng;
+    });
+  }
 
   getLocation(lat: string, lng: string){
     this.geocacheService.getPhysicalAddress(lat, lng).subscribe(res => {
-     this.address = res.json().results[0].formatted_address;
-   })
+      this.address = res.json().results[0].formatted_address;
+    });
   }
+
+  submitForm(creator: string, address: string, lat: number, lon: number, hint: string) {
+    var newCache: Cache = new Cache(creator, address, lat, lon, hint);
+    this.geocacheService.addCache(newCache);
+  }
+
 
 }
