@@ -15,6 +15,7 @@ export class GeocacheListComponent implements OnInit {
   cacheList;
   address;
   isActive: boolean = false;
+  gpsActive: boolean = false;
 
   constructor(
     private geocacheService: GeocacheService,
@@ -29,10 +30,16 @@ export class GeocacheListComponent implements OnInit {
   toggleActive() {
     if (this.isActive) {
       this.isActive = false;
-      console.log(this.isActive);
     } else {
       this.isActive = true;
-      console.log(this.isActive);
+    }
+  }
+
+  toggleGpsActive() {
+    if (this.gpsActive) {
+      this.gpsActive = false;
+    } else {
+      this.gpsActive = true;
     }
   }
 
@@ -44,11 +51,7 @@ export class GeocacheListComponent implements OnInit {
   getLocation(lat: string, lng: string){
     this.geocacheService.getPhysicalAddress(lat, lng).subscribe(res => {
      this.address = res.json().results[0].formatted_address;
-
-     console.log(this.address);
    })
-    // this.address = this.http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+lng+"&key="+geoKey);
-    // console.log(this.address);
   }
 
 }

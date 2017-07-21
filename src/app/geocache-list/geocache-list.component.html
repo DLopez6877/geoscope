@@ -7,6 +7,16 @@
   </div>
 
   <h3>Location</h3>
+  <span (click)="toggleGpsActive()">Click here to look up lattitude and longitude</span>
+  <div *ngIf="this.gpsActive">
+    <div class="form-group">
+      <label>Enter an address:</label>
+      <input #newPhysicalAddress>
+    </div>
+    <button (click)="getGps(newPhysicalAddress.value)">Search</button>
+  </div>
+
+
   <div class="form-group">
     <label>Latitude:</label>
     <input #newLat class="form-control">
@@ -25,7 +35,8 @@
     <label>Hint:</label>
     <input #newHint class="form-control">
   </div>
-  <button (click)="submitForm(newCreator.value, newLat.value, newLon.value, newAddress.value, newHint.value); newCreator.value=''; newLat.value=''; newLon.value=''; newAddress.value=''; newHint.value=''">ADD</button>
+  <button (click)="submitForm(newCreator.value, newAddress.value, newLat.value, newLon.value, newHint.value); newCreator.value=''; newLat.value=''; newLon.value=''; newAddress.value=''; newHint.value=''">ADD</button>
 </div>
+
 
 <p *ngFor="let cache of cacheList | async">by {{cache.creator}} lat: {{cache.lat}} lon: {{cache.lon}} {{cache.hint}} {{cache.address}}</p>
