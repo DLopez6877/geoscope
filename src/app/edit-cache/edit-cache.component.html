@@ -1,25 +1,31 @@
-<h4>Edit</h4>
+<div class="wrapper">
+  <h4>Edit</h4>
 
-<label>Edit Creator:</label>
-<input [(ngModel)]="selectedCache.creator">
-<br>
+  <label>Edit Creator:</label>
+  <input [(ngModel)]="selectedCache.creator">
+  <br>
 
-<label>Edit Latitude:</label>
-<input [(ngModel)]="selectedCache.lat">
-<br>
+  <label>Edit Latitude:</label>
+  <input [(ngModel)]="selectedCache.lat">
+  <br>
 
-<label>Edit Longitude:</label>
-<input [(ngModel)]="selectedCache.lon">
+  <label>Edit Longitude:</label>
+  <input [(ngModel)]="selectedCache.lon">
+  <br>
 
-<label>Edit Longitude:</label>
-<input [(ngModel)]="selectedCache.lon">
+  <label>Edit Longitude:</label>
+  <input [(ngModel)]="selectedCache.lon">
+  <br>
 
-<label>Edit Address:</label>
-<input [(ngModel)]="selectedCache.address">
+  <label>Edit Address:</label>
+  <input [(ngModel)]="selectedCache.address">
+  <br>
 
-<label>Edit Hint:</label>
-<input [(ngModel)]="selectedCache.hint">
+  <label>Edit Hint:</label>
+  <input [(ngModel)]="selectedCache.hint">
+  <br>
 
-<button (click)="beginUpdatingCache(selectedCache)">Update</button>
+  <button (click)="beginUpdatingCache(selectedCache)">Update</button>
 
-<button (click)="beginDeletingCache(selectedCache)">Delete</button>
+  <button (click)="beginDeletingCache(selectedCache)">Delete</button>
+</div>
