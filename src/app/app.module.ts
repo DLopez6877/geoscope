@@ -10,7 +10,6 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { routing } from './app.routing';
 import { GeocacheListComponent } from './geocache-list/geocache-list.component';
 import { masterFirebaseConfig } from './api-keys';
-import { NewCacheComponent } from './new-cache/new-cache.component';
 import { AdminComponent } from './admin/admin.component';
 import { EditCacheComponent } from './edit-cache/edit-cache.component';
 import { CacheDetailComponent } from './cache-detail/cache-detail.component';
