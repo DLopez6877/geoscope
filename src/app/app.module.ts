@@ -26,7 +26,6 @@ export const firebaseConfig = {
     AppComponent,
     WelcomeComponent,
     GeocacheListComponent,
-    NewCacheComponent,
     AdminComponent,
     EditCacheComponent,
     CacheDetailComponent
