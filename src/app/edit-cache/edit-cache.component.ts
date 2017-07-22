@@ -17,6 +17,7 @@ export class EditCacheComponent implements OnInit {
 
   beginUpdatingCache(cacheToUpdate){
     this.geocacheService.updateCache(cacheToUpdate);
+    alert("changes saved");
   }
 
   beginDeletingCache(cacheToDelete){
