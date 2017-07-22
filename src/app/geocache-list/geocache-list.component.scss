@@ -1,0 +1,9 @@
+span {
+  color: navy;
+  font-size: 1.2em;
+  text-decoration: underline;
+  cursor: pointer;
+  &:hover {
+    color: white;  
+  }
+}
